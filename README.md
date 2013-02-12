@@ -117,30 +117,30 @@ IETF RFC/I-Ds:
 Architecture:
 
 
-                   .------.
-                   |Video |
-                 _ |Stream|\
-                 /|'------' \ 1
-                /            \
-               /             _\|
- .--. N  .----. M  .------. 1  .-------. 1  .-----.
- |UA|--->|Call|--->|Audio |--->|Generic|--->|Media|
- '--'    '----'    |Stream|    |Stream |    | NAT |
-            |1     '------'    '-------'    '-----'
-            |         C|       1|   |
-           \|/      .-----.  .----. |
-        .-------.   |Codec|  |Jbuf| |1
-        | SIP   |   '-----'  '----' |
-        |Session|     1|       /|\  |
-        '-------'    .---.      |  \|/
-                     |DSP|    .--------.
-                     '---'    |RTP/RTCP|
-                              '--------'
-                              |  SRTP  |
-                              '--------'
+	                   .------.
+	                   |Video |
+	                 _ |Stream|\
+	                 /|'------' \ 1
+	                /            \
+	               /             _\|
+	 .--. N  .----. M  .------. 1  .-------. 1  .-----.
+	 |UA|--->|Call|--->|Audio |--->|Generic|--->|Media|
+	 '--'    '----'    |Stream|    |Stream |    | NAT |
+	            |1     '------'    '-------'    '-----'
+	            |         C|       1|   |
+	           \|/      .-----.  .----. |
+	        .-------.   |Codec|  |Jbuf| |1
+	        | SIP   |   '-----'  '----' |
+	        |Session|     1|       /|\  |
+	        '-------'    .---.      |  \|/
+	                     |DSP|    .--------.
+	                     '---'    |RTP/RTCP|
+	                              '--------'
+	                              |  SRTP  |
+	                              '--------'
 
-   A User-Agent (UA) has 0-N SIP Calls
-   A SIP Call has 0-M Media Streams
+	A User-Agent (UA) has 0-N SIP Calls
+	A SIP Call has 0-M Media Streams
 
 
 Supported platforms:
@@ -173,3 +173,14 @@ librem
 Feedback:
 
 - Please send feedback to <libre@creytiv.com>
+
+TODO:
+-----
+
+Version v0.x.y:
+
+  video rate-control
+  S605th: no DNS-server IP
+  add mwi module for message-waiting indication (mailbox uri)
+  presence: test with presence-server (?)
+  conf: move generation of config template to a module ('config.so')
