@@ -281,8 +281,8 @@ static int module_init(void)
 	(void)re_snprintf(ilbc_fmtp, sizeof(ilbc_fmtp),
 			  "mode=%d", DEFAULT_MODE);
 
-	return aucodec_register(&ilbc, "98", "iLBC", 8000, 1, ilbc_fmtp,
-			       alloc, encode, decode, NULL);
+	return aucodec_register(&ilbc, NULL, "iLBC", 8000, 1, ilbc_fmtp,
+			       alloc, encode, decode);
 }
 
 

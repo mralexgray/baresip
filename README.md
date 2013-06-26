@@ -1,4 +1,4 @@
-BareSIP
+BARESIP
 -------
 
 Baresip is a portable and modular SIP User-Agent with audio and video support
@@ -19,65 +19,68 @@ Design goals:
 
 Modular Plugin Architecture:
 
-alsa          ALSA audio driver
-amr           Adaptive Multi-Rate (AMR) audio codec
-audiounit     AudioUnit audio driver for MacOSX/iOS
-auloop        Audio-loop test module
-avcapture     Video source using iOS AVFoundation video capture
-avcodec       Video codec using FFmpeg
-avformat      Video source using FFmpeg libavformat
-bv32          BroadVoice32 audio codec
-cairo         Cairo video source
-celt          CELT audio codec
-cons          UDP console
-contact       Contacts module
-coreaudio     Apple Coreaudio driver
-evdev         Linux input driver
-g711          G.711 audio codec
-g722          G.722 audio codec
-g7221         G.722.1 audio codec
-gsm           GSM audio codec
-gst           Gstreamer audio source
-ice           ICE protocol for NAT Traversal
-ilbc          iLBC audio codec
-isac          iSAC audio codec
-l16           L16 audio codec
-mda           Symbian Mediaserver audio driver
-menu          Interactive menu
-natbd         NAT Behavior Discovery Module
-opengl        OpenGL video output
-opengles      OpenGLES video output
-opensles      OpenSLES audio driver
-opus          OPUS Interactive audio codec
-oss           Open Sound System (OSS) audio driver
-plc           Packet Loss Concealment (PLC) using spandsp
-portaudio     Portaudio driver
-presence      Presence module
-qtcapture     Apple QTCapture video source driver
-quicktime     Apple Quicktime video source driver
-rst           Radio streamer using mpg123
-sdl           Simple DirectMedia Layer (SDL) video output driver
-selfview      Video selfview module
-silk          SILK audio codec
-sndfile       Audio dumper using libsndfile
-speex         Speex audio codec
-speex_aec     Acoustic Echo Cancellation (AEC) using libspeexdsp
-speex_pp      Audio pre-processor using libspeexdsp
-speex_resamp  Audio resampler using libspeexdsp
-srtp          Secure RTP encryption
-stdio         Standard input/output UI driver
-stun          Session Traversal Utilities for NAT (STUN) module
-syslog        Syslog module
-turn          Obtaining Relay Addresses from STUN (TURN) module
-uuid          UUID generator and loader
-v4l           Video4Linux video source
-v4l2          Video4Linux2 video source
-vidloop       Video-loop test module
-vpx           VP8/VPX video codec
-vumeter       Display audio levels in console
-winwave       Audio driver for Windows
-x11           X11 video output driver
-x11grab       X11 grabber video source
+* alsa          ALSA audio driver
+* amr           Adaptive Multi-Rate (AMR) audio codec
+* audiounit     AudioUnit audio driver for MacOSX/iOS
+* auloop        Audio-loop test module
+* avcapture     Video source using iOS AVFoundation video capture
+* avcodec       Video codec using FFmpeg
+* avformat      Video source using FFmpeg libavformat
+* bv32          BroadVoice32 audio codec
+* cairo         Cairo video source
+* celt          CELT audio codec
+* cons          UDP console
+* contact       Contacts module
+* coreaudio     Apple Coreaudio driver
+* evdev         Linux input driver
+* g711          G.711 audio codec
+* g722          G.722 audio codec
+* g7221         G.722.1 audio codec
+* g726          G.726 audio codec
+* gsm           GSM audio codec
+* gst           Gstreamer audio source
+* ice           ICE protocol for NAT Traversal
+* ilbc          iLBC audio codec
+* isac          iSAC audio codec
+* l16           L16 audio codec
+* mda           Symbian Mediaserver audio driver
+* menu          Interactive menu
+* mwi           Message Waiting Indication
+* natbd         NAT Behavior Discovery Module
+* opengl        OpenGL video output
+* opengles      OpenGLES video output
+* opensles      OpenSLES audio driver
+* opus          OPUS Interactive audio codec
+* oss           Open Sound System (OSS) audio driver
+* plc           Packet Loss Concealment (PLC) using spandsp
+* portaudio     Portaudio driver
+* presence      Presence module
+* qtcapture     Apple QTCapture video source driver
+* quicktime     Apple Quicktime video source driver
+* rst           Radio streamer using mpg123
+* sdl           Simple DirectMedia Layer (SDL) video output driver
+* selfview      Video selfview module
+* silk          SILK audio codec
+* snapshot      Save video-stream as PNG images
+* sndfile       Audio dumper using libsndfile
+* speex         Speex audio codec
+* speex_aec     Acoustic Echo Cancellation (AEC) using libspeexdsp
+* speex_pp      Audio pre-processor using libspeexdsp
+* speex_resamp  Speex resampler (deprecated)
+* srtp          Secure RTP encryption
+* stdio         Standard input/output UI driver
+* stun          Session Traversal Utilities for NAT (STUN) module
+* syslog        Syslog module
+* turn          Obtaining Relay Addresses from STUN (TURN) module
+* uuid          UUID generator and loader
+* v4l           Video4Linux video source
+* v4l2          Video4Linux2 video source
+* vidloop       Video-loop test module
+* vpx           VP8/VPX video codec
+* vumeter       Display audio levels in console
+* winwave       Audio driver for Windows
+* x11           X11 video output driver
+* x11grab       X11 grabber video source
 
 
 IETF RFC/I-Ds:
@@ -110,7 +113,7 @@ IETF RFC/I-Ds:
 * RFC 6716  Definition of the Opus Audio Codec
 
 * draft-valin-celt-rtp-profile-02
-* draft-westin-payload-vp8-02
+* draft-ietf-payload-vp8-08
 * draft-spittka-payload-rtp-opus-00
 
 
@@ -139,8 +142,8 @@ Architecture:
 	                              |  SRTP  |
 	                              '--------'
 
-	A User-Agent (UA) has 0-N SIP Calls
-	A SIP Call has 0-M Media Streams
+	   A User-Agent (UA) has 0-N SIP Calls
+	   A SIP Call has 0-M Media Streams
 
 
 Supported platforms:
@@ -166,21 +169,10 @@ Supported compilers:
 
 External dependencies:
 
-libre
-librem
+[libre](https://github.com/danielvargas/libre)
+[librem](https://github.com/danielvargas/librem)
 
 
 Feedback:
 
 - Please send feedback to <libre@creytiv.com>
-
-TODO:
------
-
-Version v0.x.y:
-
-  video rate-control
-  S605th: no DNS-server IP
-  add mwi module for message-waiting indication (mailbox uri)
-  presence: test with presence-server (?)
-  conf: move generation of config template to a module ('config.so')
